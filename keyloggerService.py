@@ -35,3 +35,6 @@ class KeyLoggerService(IKeyLogger):
         if self.listener:
             self.listener.stop()
             self.listener = None
+
+    def get_logged_keys(self) -> List[str]:
+        return self.logged_keys
