@@ -7,3 +7,6 @@ class Encryptor:
 
     def decrypt(self, encrypted_data: str) -> str:
         return "".join(chr(ord(char) ^ self.key) for char in encrypted_data)
+
+
+

