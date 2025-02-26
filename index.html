@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHADEX</title>
+    <link rel="icon" href="images/logo-baner.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        
+        /* באנר צבעוני בצבעי האתר */
+        .banner {
+            background-color: #8b0000; /* צבע אדום כהה */
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 1.5rem;
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+
+
+        /* סטיילינג של אלמנט שגיאה */
+        .error-message {
+            color: rgb(255, 255, 255);
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        /* כלליות עיצוב לטופס */
+        .input-container {
+            margin-bottom: 10px;
+        }
+
+        .forgot-password a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="לוגו">
+        </div>
+    </header>
+
+    <div class="login-container">
+        <h1>ברוכים הבאים</h1>
+        <div class="input-container">
+            <input type="text" id="username" placeholder="שם משתמש">
+        </div>
+        <div class="input-container">
+            <input type="password" id="password" placeholder="סיסמה">
+        </div>
+        <button class="login-btn">כניסה</button>
+        <div class="forgot-password">
+            <a href="#" id="forgot-password-link">שכחת סיסמא?</a>
+            <p id="forgot-password-message" style="display: none; color: #e9dbdb;">אנא פנה למנהל האתר.</p>
+        </div>
+        <p class="error-message" id="login-error-message">אחד מהנתונים שהזנת שגויים, אנא נסה שוב</p>
+    </div>
+
+    <div class="contact-section">
+        <h2>השאירו פרטים לחזרה</h2>
+        <form action="mailto:YAKIRUZANGREEN@GMAIL.COM" method="post" enctype="text/plain">
+            <div class="input-container">
+                <input type="text" name="name" placeholder="שם מלא" required>
+            </div>
+            <div class="input-container">
+                <input type="tel" name="phone" placeholder="טלפון" required>
+            </div>
+            <div class="input-container">
+                <input type="email" name="email" placeholder="אימייל" required>
+            </div>
+            <button type="submit">שלח</button>
+        </form>
+    </div>
+
+    <footer class="about-us-footer">
+        <h2 style="text-align: center; font-size: 2rem;">קצת עלינו</h2>
+        <p>
+            אנחנו חברת סייבר מובילה בשם <strong>SHADEX</strong> המתמחה במעקב ובהגנה מפני איומים דיגיטליים. הצוות שלנו מורכב ממומחים בעלי ניסיון רב בתחום האבטחה הסייברית, המספקים פתרונות מתקדמים להגנה על נתונים ורשתות.
+            <br><br>
+            ב-<strong>SHADEX</strong> אנו עוקבים אחרי איומים ברמה הגלובלית, מנתחים פעילויות חשודות ומספקים ללקוחותינו כלים להתמודדות עם מתקפות סייבר. בין השירותים שלנו: ניטור רשתות, זיהוי פריצות, תגובה לאירועים ותכניות הדרכה לצוותים.
+            <br><br>
+            המטרה שלנו היא להבטיח שהלקוחות שלנו יישארו מוגנים מפני כל סוג של איום דיגיטלי, תוך שמירה על פרטיות ואבטחה ברמה הגבוהה ביותר. אנו מאמינים כי הגנה אפקטיבית דורשת לא רק טכנולוגיה מתקדמת, אלא גם צוות מקצועי ומחויב.
+        </p>
+    </footer>
+    </footer>
+
+    <script>
+            // Function to validate login
+        document.querySelector('.login-btn').addEventListener('click', function() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            const users = {
+                "yakiruzan": "319149910",
+                "moshecohen": "212311807"
+            };
+
+            const errorMessage = document.getElementById('login-error-message');
+            errorMessage.style.display = 'none'; // Hide error message initially
+
+            if (users[username] && users[username] === password) {
+                window.location.href = "dashboard.html"; // דף תוכן לאחר התחברות מוצלחת
+            } else {
+                errorMessage.style.display = 'block'; // Show error message if credentials are incorrect
+            }
+        });
+
+        // Function for "forgot password" behavior
+        document.getElementById('forgot-password-link').addEventListener('click', function(e) {
+            e.preventDefault(); // מונע את מעבר הלינק
+            const message = document.getElementById('forgot-password-message');
+            message.style.display = 'block'; // מציג את ההודעה
+        });
+
+   
+    </script>
+</body>
+</html>

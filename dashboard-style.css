@@ -1,0 +1,114 @@
+/* סגנון כללי */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    direction: rtl; /* כדי שהטקסט יהיה מימין לשמאל */
+    background-image: url('images/background2.jpg'); /* רקע אחיד לכל האתר */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* הרקע נשאר קבוע */
+    background-position: center;
+    background-color: transparent !important;
+    min-height: 100vh; /* רקע יכסה את כל הגובה */
+    filter: brightness(1);
+}
+
+/* עבור מודל כפתורים באמצע */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* רקע שחור שקוף */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* חשוב שיהיה מעל כל התוכן */
+}
+
+/* סגנון עבור הכרטיסים (כפתורים) */
+.content-card {
+    background-color: rgba(0, 0, 0, 0.8); /* רקע שחור שקוף */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+    margin: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+/* אפקט על הכרטיסים */
+.content-card:hover {
+    transform: scale(1.05);
+}
+
+/* אם אתה רוצה שתרחיב את הכרטיסים בעת ריחוף */
+.content-card a:hover {
+    background-color: #8b0000; /* אדום כהה */
+    padding-left: 40px; /* הגדלת הרווח */
+    transition: 0.3s;
+}
+
+/* תוכן הדף */
+.content {
+    margin-right: 260px;
+    padding: 100px 20px;
+    flex-grow: 1;
+}
+
+/* סרגל צד */
+.sidebar {
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 10;
+    position: sticky;
+    height: 100%;
+    top: 10;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    transition: width 0.3s;
+}
+
+.sidebar:hover {
+    width: 270px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    padding: 20px;
+    text-align: right;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    display: block;
+    transition: 0.3s;
+    padding-left: 10px;
+    background-color: transparent !important;
+}
+
+.sidebar a:hover {
+    background-color: #8b0000 !important;
+    padding-left: 40px;
+    transition: 0.3s;
+}
+
+/* ברקוד מתנודד */
+.sidebar:hover {
+    width: 270px;
+}

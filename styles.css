@@ -1,0 +1,151 @@
+/* Reset some basic styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    direction: rtl; /* כדי שהטקסט יהיה מימין לשמאל */
+    background-image: url('images/background.webp'); /* רקע אחיד לכל האתר */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; /* הרקע נשאר קבוע */
+    background-position: center;
+    min-height: 100vh; /* רקע יכסה את כל הגובה */
+    filter: brightness(1);
+}
+
+header {
+    display: flex;
+    justify-content: flex-end; /* הכפתורים ימוקמו בצד ימין */
+    align-items: center;
+    padding: 20px;
+    background-color: transparent; /* הרקע של ההדר יהיה שקוף */
+    position: fixed; /* כדי שהלוגו יוכל להיות מעל הרקע */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+}
+
+.logo img {
+    height: 250px; /* הגדלת הלוגו */
+    top: -20px; /* הלוגו יוזז קצת למעלה */
+    left: 0;
+    z-index: 1000;
+}
+
+
+.login-container, .contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.5); /* רקע כהה לחלק הזה */
+    border-radius: 10px; /* עיגול הפינות */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4); /* צל */ 
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem; /* הגדלת הטקסט */
+    text-align: center;
+}
+
+.input-container {
+    margin-bottom: 20px; /* הגדלת המרווח */
+    width: 100%;
+    max-width: 350px; /* הגדלת הרוחב */
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"] {
+    padding: 15px; /* הגדלת הפאדינג */
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: rgba(255, 255, 255, 0.9); /* רקע שקוף לשדות */
+    font-size: 1rem; /* הגדלת הגופן */
+    color: #333; /* צבע טקסט כהה */
+}
+
+input[type="tel"]::placeholder {
+    text-align: right;
+}
+
+button {
+    padding: 15px 30px; /* הגדלת הכפתור */
+    border: 2px solid #8b0000;
+    border-radius: 10px;
+    background-color: #8b0000; /* אדום כהה */
+    color: #fff;
+    cursor: pointer;
+    width: 100%;
+    max-width: 350px; /* הגדלת הרוחב */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    background-color: #7a0000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* הוספת צל על הכפתור */
+}
+
+.forgot-password {
+    margin-top: 10px;
+    font-size: 1rem; /* הגדלת הגופן */
+}
+
+.forgot-password a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+.contact-section {
+    background-color: rgba(26, 26, 26, 0.8); /* רקע שקוף */
+    border-radius: 10px;
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 500px;
+}
+
+.contact-section h2 {
+    margin-bottom: 20px;
+    font-size: 2rem; /* גודל זהה ל-h1 */
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* הגדלת המרווח */
+    width: 100%;
+    max-width: 350px; /* רוחב זהה לכניסה */
+}
+
+.about-us-footer {
+    margin-top: 40px;
+    padding: 40px 20px;
+    background-color: rgba(26, 26, 26, 0.8); /* רקע שקוף */
+    text-align: right; /* טקסט מימין לשמאל */
+}
+
+.about-us-footer h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.about-us-footer p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}

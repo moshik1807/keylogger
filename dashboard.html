@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="he">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SHADEX - לוח בקרה</title>
+        <link rel="stylesheet" href="dashboard-style.css">
+        <link rel="icon" href="images/logo-baner.png" type="image/png">
+        <script src="https://cdn.tailwindcss.com"></script>
+        
+        <style>
+            .sidebar a {
+                text-decoration: none;
+                color: #fff;
+                font-size: 1.2rem;
+                display: block;
+                padding-left: 10px;
+                transition: 0.3s;
+                background-color: transparent !important;
+            }
+    
+            .sidebar a:hover {
+                background-color:#8b0000 !important;
+                padding-left: 20px;
+                transition: 0.3s;
+            }
+
+            .sidebar {
+                background-color: rgba(0, 0, 0, 0.7) !important;
+            }
+
+            .sidebar a {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+
+            .hover\:scale-105:hover {
+                transform: scale(1.05);
+            }
+
+            .content-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+
+            /* כפתורי המרכז */
+            .content-card a {
+                display: block;
+                padding: 20px;
+                border-radius: 10px;
+                text-decoration: none;
+                color: white;
+                background-color: rgba(0, 0, 0, 0.7); /* שחור שקוף */
+                transition: 0.3s;
+                width: 100%;
+                max-width: 350px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    
+    <body class="bg-gray-900 text-white font-sans">
+        <div class="flex h-screen">
+            <div class="w-64 p-5 flex flex-col sidebar">
+                <h1 class="text-2xl font-bold text-center mb-5"></h1>
+                <ul class="space-y-3">
+                    <li><a href="#">ניהול מחשבים</a></li>
+                    <li><a href="#">ניהול משתמשים</a></li>
+                    <li><a href="#">מחשבים פעילים</a></li>
+                    <li><a href="#">התראות</a></li>
+                    <li><a href="#">הגדרות</a></li>
+                    <li><a href="#">התנתקות</a></li>
+                </ul>
+            </div>
+        
+            <div class="flex-1 flex justify-center items-center">
+                <div class="content-grid">
+                    <!-- כפתור "התחלת האזנה" -->
+                    <div class="content-card">
+                        <button id="start-listening-button" onclick="startListening()" class="p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+                            התחלת האזנה
+                        </button>
+                    </div>
+
+                    <div class="content-card">
+                        <button id="stop-listening-button" onclick="stopListening()" class="p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+                            הפסקת האזנה
+                        </button>
+                    </div>
+
+                    <div class="content-card">
+                        <button id="show-data-button" onclick="showData()" class="p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+                            הצגת נתוני קריאה
+                        </button>
+                    </div>
+
+                    <div class="content-card">
+                        <button onclick="showReports()" class="p-6 rounded-lg shadow-lg transform transition duration-300 hover:scale-105">
+                            הצגת דוחות
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+        <script src="dashboard.js"></script>
+
+        <script>
+            // Function to start listening for keypresses
+            function startListening() {
+                alert('האזנה התחילה');
+                // כאן יהיה הקוד שלך להאזנה למקשים או קוד אחר שקשור למערכת
+                console.log('האזנה התחילה!');
+            }
+
+            // Function to stop listening for keypresses
+            function stopListening() {
+                alert('האזנה הופסקה');
+                // כאן יהיה הקוד שלך להפסקת ההאזנה
+                console.log('האזנה הופסקה!');
+            }
+
+            // Function to show reading data (you יכול להוסיף את הקוד שלך כאן)
+            function showData() {
+                alert('הצגת נתוני קריאה');
+                // כאן תוכל להוסיף את הקוד להציג נתוני קריאה
+                console.log('נתוני קריאה מוצגים');
+            }
+    </body>
+</html>
